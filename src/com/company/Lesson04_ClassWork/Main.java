@@ -111,18 +111,37 @@ public class Main {
         String ss = "aaa";*/
 
         //Отсортировать массив строк через bubble sort
-        String[] text = {"I", "still", "learning", "java", "language"};
+        String[] text = {"I", "still", "learning", "Java", "language"};
         int n = text.length;
         sortString(text, n);
+
+        System.out.println(Arrays.toString(text));
+        System.out.println("-----------------");
+        sortStringUptoLength(text);
         System.out.println(Arrays.toString(text));
 
     }
 
     public static void sortString(String[] arr, int n) {
+        System.out.println("Массив отсортирован в алфавитном порядке заглавной буквы каждого элемента:");
         String temp;
         for (int i = 0; i < n; i++) {
             for (int j = i+1; j < n; j++) {
                 if (arr[i].compareTo(arr[j]) > 0) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+    public static void sortStringUptoLength(String[] arr) {
+        System.out.println("Массив отсортирован по длине каждого элемента:");
+        int l = arr.length;
+        String temp;
+        for (int i = 0; i < l; i++) {
+            for (int j = i+1; j < l; j++) {
+                if (arr[i].length() > arr[j].length()) {
                     temp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = temp;
