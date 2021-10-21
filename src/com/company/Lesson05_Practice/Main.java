@@ -6,13 +6,13 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         // конструктор с параметрами в виде списка координат x,y,z
+
         System.out.println("Приведены два вектора для тестироания: ");
         Vector vectorA = new Vector(1, 2, 3);
         Vector vectorB = new Vector(2, 33, 22);
         System.out.println("Вектор А: " + vectorA.toString());
         System.out.println("Вектор B: " + vectorB.toString());
         System.out.println();
-
 
         //метод вычисляющий длину вектора
         System.out.print("Длина вектора А равна ");
@@ -52,3 +52,5 @@ public class Main {
 
     }
 }
+
+
