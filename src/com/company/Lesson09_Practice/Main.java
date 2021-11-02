@@ -2,16 +2,19 @@ package com.company.Lesson09_Practice;
 
 
 import java.lang.reflect.Array;
+import java.lang.reflect.Executable;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.stream.IntStream;
 
-public class Main {
-    public static void main(String[] args) {
+public class Main extends Exception {
+    public static void main(String[] args) throws Exception {
         int[][] array = new int[3][3];
         int[][] arrayTest = {{1, 2, 3, 4}, {1, 2}, {1, 2, 3, 4}, {2, 0}};
-        fillArray(array, 100);
+        fillArray(array);
         System.out.println(Arrays.deepToString(array));
+        System.out.println();
         //1
         System.out.println(findMaxElement(array));
         //2
@@ -34,11 +37,27 @@ public class Main {
     }
 
     //заполним двухмерный массив
-    public static int[][] fillArray(int[][] array, int max) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                array[i][j] = new Random().nextInt(max);
+    public static int[][] fillArray(int[][] array) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+        int max;
+        try {
+            System.out.print("Укажите верхний предел рандомайзеру для заполнения массива: ");
+            while (!scanner.hasNextInt()) {
+                throw new InvalidInputException("!!! Введите число. Не букву и не символ, а число.");
             }
+            while(scanner.nextInt() < 0){
+                throw new InvalidInputException("!!! Число должно быть положительным.");
+            }
+            max = scanner.nextInt();
+            for (int i = 0; i < array.length; i++) {
+                for (int j = 0; j < array[i].length; j++) {
+                    array[i][j] = new Random().nextInt(max);
+                }
+            }
+        } catch (InvalidInputException e) {
+            System.out.println(e.getMessage());
+            System.out.println();
+            fillArray(array);
         }
         return array;
     }
@@ -114,10 +133,10 @@ public class Main {
         int target = array1[i];
         System.out.println("Выбранное число: " + target);
         for (int element : array2) {
-            if(element == target){
-                System.out.println("Элемент найден. Это элемент [" + i+"] второго массива.");
+            if (element == target) {
+                System.out.println("Элемент найден. Это элемент [" + i + "] второго массива.");
                 return;
-            } else{
+            } else {
 
             }
         }
@@ -125,3 +144,4 @@ public class Main {
 
     }
 }
+
