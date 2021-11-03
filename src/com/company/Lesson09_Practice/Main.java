@@ -45,7 +45,7 @@ public class Main extends Exception {
             while (!scanner.hasNextInt()) {
                 throw new InvalidInputException("!!! Введите число. Не букву и не символ, а число.");
             }
-            while(scanner.nextInt() < 0){
+            while (scanner.nextInt() < 0) {
                 throw new InvalidInputException("!!! Число должно быть положительным.");
             }
             max = scanner.nextInt();
@@ -132,12 +132,19 @@ public class Main extends Exception {
         int i = new Random().nextInt(0, array1.length);
         int target = array1[i];
         System.out.println("Выбранное число: " + target);
-        for (int element : array2) {
+//        for (int j = 0; j < array2.length; j++) {
+//            if (array2[j] == target) {
+//                System.out.println("Элемент найден. Это элемент [" + j + "] второго массива.");
+//                return;
+//            }
+//        }
+        int index = 0;
+        for (var element : array2) {
             if (element == target) {
-                System.out.println("Элемент найден. Это элемент [" + i + "] второго массива.");
+                System.out.println("Элемент найден. Это элемент [" + index + "] второго массива.");
                 return;
             } else {
-
+                index++;
             }
         }
         System.out.println("Совпадения не найдены...");
