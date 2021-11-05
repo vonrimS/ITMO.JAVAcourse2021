@@ -44,7 +44,7 @@ public class Main {
 
         //6
         File dir6 = new File(".\\src\\com\\company\\Lesson11_Practice\\6");
-        ArrayList<String> list = findMatchToSubstring(dir6, "ABC");
+       // ArrayList<String> list = findMatchToSubstring(dir6, "ABC");
 
 
     }
