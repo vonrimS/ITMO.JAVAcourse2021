@@ -7,10 +7,10 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         //1
-        File file = new File(".\\src\\com\\company\\Lesson11_Practice\\src1.txt");
-        print(file);
-        List<String> list = fileToArray(file);
-        System.out.println(list);
+//        File file = new File(".\\src\\com\\company\\Lesson11_Practice\\src1.txt");
+//        print(file);
+//        List<String> list = fileToArray(file);
+//        System.out.println(list);
 
         //2
         File file2 = new File(".\\src\\com\\company\\Lesson11_Practice\\src2.txt");
@@ -24,7 +24,7 @@ public class Main {
         appendToFile(file3, "WTF");
 
         //3
-        File file0 = mergeFiles(file2, file3);
+      /*  File file0 = mergeFiles(file2, file3);
         print(file0);
 
         //4
@@ -45,7 +45,7 @@ public class Main {
         //6
         File dir6 = new File(".\\src\\com\\company\\Lesson11_Practice\\6");
        // ArrayList<String> list = findMatchToSubstring(dir6, "ABC");
-
+*/
 
     }
 

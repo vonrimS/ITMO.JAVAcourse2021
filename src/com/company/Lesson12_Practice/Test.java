@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Test {
     public static void main(String[] args) {
         //1
-        for (int i = 0; i <= 10; i++) {
+       /* for (int i = 0; i <= 10; i++) {
             ThreadsTaskOne threadTaskOne = new ThreadsTaskOne(i);
             threadTaskOne.run();
         }
@@ -29,27 +29,35 @@ public class Test {
             }
         }
         System.out.println("=>\tИтоговое значение для счетчика : " + new Counter().getCount());
-
+*/
 
         //4
-        for (int i = 0; i < 10; i++) {
-            Thread t1 = new Thread(new SayYourName("Mikhail"));
-            Thread t2 = new Thread(new SayYourName("Ekaterina"));
-            Thread t3 = new Thread(new SayYourName("Kseniia"));
+//        for (int i = 0; i < 10; i++) {
+//            Thread t1 = new Thread(new SayYourName("Mikhail"));
+//            Thread t2 = new Thread(new SayYourName("Ekaterina"));
+//            Thread t3 = new Thread(new SayYourName("Kseniia"));
+//
+//            t1.run();
+//            t2.run();
+//            t3.run();
+//
+//            Scanner sc = new Scanner(System.in);
+//            if (i == 9) {
+//                System.out.println("\t Do you REALLY want to keep talking? [Y / N]");
+//                String s = sc.nextLine();
+//                if (s.equalsIgnoreCase("y")) {
+//                    i = 0;
+//                }
+//            }
+//        }
 
-            t1.run();
-            t2.run();
-            t3.run();
+        Object object = new Object();
+        Thread t1 = new Thread(new SayYourName("Евлампий", object));
+        Thread t2 = new Thread(new SayYourName("Акстинья", object));
+        Thread t3 = new Thread(new SayYourName("Игнат", object));
 
-            Scanner sc = new Scanner(System.in);
-            if (i == 9) {
-                System.out.println("\t Do you REALLY want to keep talking? [Y / N]");
-                String s = sc.nextLine();
-                if (s.equalsIgnoreCase("y")) {
-                    i = 0;
-                }
-            }
-        }
-
+        t1.start();
+        t2.start();
+        t3.start();
     }
 }

@@ -3,6 +3,7 @@ package com.company.Lesson12_Practice;
 public class ThreadsTaskTwo extends Thread {
     private int threadNum;
 
+
     public ThreadsTaskTwo() {
     }
 
